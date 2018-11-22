@@ -2,7 +2,7 @@ const connection = require("./connection");
 
 const orm = {
     selectAll: (tableInput, callBack) => {
-        connection.query("SELECT * FROM ??", tableInput, (err,result) => {
+        connection.query("SELECT * FROM ?? ORDER BY createdAt ASC", tableInput, (err,result) => {
             if(err) throw err;
             callBack(result);
         });
