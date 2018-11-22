@@ -1,0 +1,29 @@
+<h1>Burger Wish List</h1>
+
+<ol> To devour!
+    {{#each burger}}
+        {{#unless devoured}}
+            {{>burger-block}}
+        {{/unless}}
+    {{/each}}
+</ol>
+
+<ol> Devoured
+    {{#each burger}}
+        {{#if devoured}}
+            <li>
+                {{burger_name}}
+            </li>
+            
+        {{/if}}
+    {{/each}}
+</ol>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <input type="text" id="burger" name="name" placeholder="Your new burger"></input>
+  </div>
+  <button type="submit">Add it!</button>
+</form>
